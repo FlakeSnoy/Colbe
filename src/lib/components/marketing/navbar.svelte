@@ -16,7 +16,7 @@
 		</div>
 		<div>
 			<p class="text-lg font-black tracking-tight">Colbe</p>
-			<p class="text-xs uppercase tracking-[0.3em] text-base-content/60">SaaS platform</p>
+			<p class="text-xs uppercase tracking-[0.3em] text-base-content/60">Social platform</p>
 		</div>
 	</div>
 
