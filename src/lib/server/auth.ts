@@ -5,12 +5,14 @@ import { sveltekitCookies } from 'better-auth/svelte-kit';
 import { getRequestEvent } from '$app/server';
 import { db } from '$lib/server/db';
 
-export const auth = betterAuth({
-	baseURL: env.ORIGIN,
-	secret: env.BETTER_AUTH_SECRET,
-	database: drizzleAdapter(db, { provider: 'sqlite' }),
-	emailAndPassword: { enabled: true },
-	plugins: [
-		sveltekitCookies(getRequestEvent) // make sure this is the last plugin in the array
-	]
-});
+export const auth = env.ORIGIN && env.BETTER_AUTH_SECRET && db
+	? betterAuth({
+		baseURL: env.ORIGIN,
+		secret: env.BETTER_AUTH_SECRET,
+		database: drizzleAdapter(db, { provider: 'sqlite' }),
+		emailAndPassword: { enabled: true },
+		plugins: [
+			sveltekitCookies(getRequestEvent) // make sure this is the last plugin in the array
+		]
+	})
+	: undefined;

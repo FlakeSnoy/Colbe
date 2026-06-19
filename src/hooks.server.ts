@@ -4,6 +4,10 @@ import { auth } from '$lib/server/auth.js';
 import { svelteKitHandler } from 'better-auth/svelte-kit';
 
 const handleBetterAuth: Handle = async ({ event, resolve }) => {
+	if (!auth) {
+		return resolve(event);
+	}
+
 	const session = await auth.api.getSession({ headers: event.request.headers });
 
 	if (session) {
