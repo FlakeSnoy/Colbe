@@ -1,18 +1,11 @@
 <script lang="ts">
 	import { NavigationMenu, DropdownMenu } from 'bits-ui';
-	import BookOpen from '@lucide/svelte/icons/book-open';
-	import ChevronDown from '@lucide/svelte/icons/chevron-down';
-	import Info from '@lucide/svelte/icons/info';
-	import LogIn from '@lucide/svelte/icons/log-in';
-	import Menu from '@lucide/svelte/icons/menu';
-	import UserPlus from '@lucide/svelte/icons/user-plus';
-	import X from '@lucide/svelte/icons/x';
+	import { BookOpen, ChevronDown, Info, LogIn, Menu, UserPlus, X } from '@lucide/svelte';
 
 	let mobileOpen = $state(false);
 </script>
 
 <header class="fixed top-0 inset-x-0 z-50">
-	<!-- Glassmorphism bar -->
 	<div class="border-b border-white/6 bg-neutral-950/75 backdrop-blur-xl backdrop-saturate-150">
 		<nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
 
@@ -60,7 +53,7 @@
 						/>
 					</DropdownMenu.Trigger>
 					<DropdownMenu.Content
-						class="z-50 mt-2 w-48 rounded-2xl border border-white/8eutral-900/95 backdrop-blur-xl p-1.5 shadow-2xl shadow-black/40"
+						class="z-50 mt-2 w-48 rounded-2xl border border-white/8 bg-neutral-900/95 backdrop-blur-xl p-1.5 shadow-2xl shadow-black/40"
 						sideOffset={8}
 						align="end"
 					>
@@ -102,39 +95,22 @@
 		</nav>
 	</div>
 
-	<!-- Mobile menu -->
 	{#if mobileOpen}
 		<div class="md:hidden border-b border-white/6 bg-neutral-950/95 backdrop-blur-xl px-5 py-3 flex flex-col gap-0.5">
-			<a
-				href="/about"
-				onclick={() => mobileOpen = false}
-				class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors"
-			>
+			<a href="/about" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
 				<Info size={14} strokeWidth={1.75} />
 				About
 			</a>
-			<a
-				href="/docs"
-				onclick={() => mobileOpen = false}
-				class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors"
-			>
+			<a href="/docs" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
 				<BookOpen size={14} strokeWidth={1.75} />
 				Docs
 			</a>
 			<div class="mt-2 pt-2 border-t border-white/6 flex flex-col gap-1.5">
-				<a
-					href="/register"
-					onclick={() => mobileOpen = false}
-					class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-colors shadow-lg shadow-blue-600/20"
-				>
+				<a href="/register" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] font-medium bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-colors">
 					<UserPlus size={14} strokeWidth={1.75} />
 					Create account
 				</a>
-				<a
-					href="/login"
-					onclick={() => mobileOpen = false}
-					class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors"
-				>
+				<a href="/login" onclick={() => mobileOpen = false} class="flex items-center gap-2.5 px-3.5 py-2.5 text-[13px] text-neutral-400 rounded-xl hover:text-white hover:bg-white/[0.07] transition-colors">
 					<LogIn size={14} strokeWidth={1.75} />
 					Log in
 				</a>

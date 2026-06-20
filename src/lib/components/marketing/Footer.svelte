@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { Separator } from 'bits-ui';
-	import Twitter from '@lucide/svelte/icons/twitter';
-	import Youtube from '@lucide/svelte/icons/youtube';
-	import Facebook from '@lucide/svelte/icons/facebook';
+	import { Twitter, Youtube, Facebook } from '@lucide/svelte';
 
 	const links = [
 		{ label: 'About us', href: '/about' },
@@ -25,19 +23,14 @@
 
 	<div class="mx-auto max-w-6xl flex flex-col items-center gap-6 px-5 md:px-8">
 
-		<!-- Nav links -->
 		<nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
 			{#each links as link}
-				<a
-					href={link.href}
-					class="text-[13px] text-neutral-500 hover:text-white transition-colors duration-150"
-				>
+				<a href={link.href} class="text-[13px] text-neutral-500 hover:text-white transition-colors duration-150">
 					{link.label}
 				</a>
 			{/each}
 		</nav>
 
-		<!-- Socials -->
 		<div class="flex items-center gap-4">
 			{#each socials as social}
 				<a
@@ -52,7 +45,6 @@
 			{/each}
 		</div>
 
-		<!-- Copyright -->
 		<p class="text-[12px] text-neutral-600">
 			Copyright &copy; {year} &mdash; All rights reserved by Colbe
 		</p>
