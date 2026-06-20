@@ -27,38 +27,39 @@
 	];
 </script>
 
-<section id="features" class="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-	<div class="mx-auto max-w-3xl text-center">
-		<div class="badge badge-neutral badge-outline">Features</div>
-		<h2 class="mt-4 text-3xl font-black tracking-tight lg:text-5xl">
-			Everything your school community needs.
+<section id="features" class="mx-auto max-w-7xl px-4 py-20 lg:px-8">
+	<!-- eyebrow + heading -->
+	<div class="mb-14">
+		<p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Features</p>
+		<h2 class="text-3xl font-black tracking-tight text-base-content lg:text-5xl max-w-xl">
+			Built for your school. Not for everyone.
 		</h2>
-		<p class="mt-4 text-base leading-7 text-base-content/70 lg:text-lg">
-			Colbe is not just another social app. Built around channels, updates, and community engagement — your way.
+		<p class="mt-4 max-w-lg text-base text-base-content/50 leading-7">
+			Colbe strips away the noise and gives your community the tools it actually needs.
 		</p>
 	</div>
 
-	<div class="mt-12 grid gap-6 lg:grid-cols-3">
-		{#each features as { icon: Icon, title, copy }}
-			<Card class="transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
-				<CardHeader>
-					<div class="bg-primary/10 text-primary w-fit rounded-xl p-3 mb-2">
-						<Icon size={22} />
-					</div>
-					<CardTitle>{title}</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<CardDescription class="text-base leading-7">{copy}</CardDescription>
-				</CardContent>
-			</Card>
+	<!-- cards -->
+	<div class="grid gap-px lg:grid-cols-3 rounded-2xl overflow-hidden border border-base-content/10">
+		{#each features as { icon: Icon, title, copy }, i}
+			<div class="bg-base-200/50 p-8 flex flex-col gap-5 hover:bg-base-200 transition-colors duration-200 {i === 1 ? 'border-x border-base-content/10' : ''}">
+				<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+					<Icon size={20} />
+				</div>
+				<div>
+					<p class="font-bold text-base-content text-lg">{title}</p>
+					<p class="mt-2 text-sm text-base-content/50 leading-6">{copy}</p>
+				</div>
+			</div>
 		{/each}
 	</div>
 
-	<div class="mt-6 grid gap-4 rounded-3xl bg-base-200/70 p-6 lg:grid-cols-3 lg:p-8">
+	<!-- highlights -->
+	<div class="mt-4 grid gap-3 lg:grid-cols-3">
 		{#each highlights as item}
-			<div class="flex items-center gap-3 rounded-2xl bg-base-100 p-4 shadow-sm">
-				<CheckCircle size={16} class="text-primary shrink-0" />
-				<p class="font-medium text-sm">{item}</p>
+			<div class="flex items-center gap-3 rounded-xl border border-base-content/10 bg-base-200/30 px-5 py-4">
+				<CheckCircle size={15} class="text-primary shrink-0" />
+				<p class="text-sm text-base-content/60">{item}</p>
 			</div>
 		{/each}
 	</div>
