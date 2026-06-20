@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Navbar, Hero, Features, Footer } from '$lib/index.js';
+	import { Navbar, Hero, Features, Cta, Footer } from '$lib/index.js';
 </script>
 
 <svelte:head>
