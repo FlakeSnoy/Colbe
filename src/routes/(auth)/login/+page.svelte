@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Log in — Colbe</title>
+	<title>Log in | Colbe</title>
 </svelte:head>
 
 <div class="min-h-screen bg-neutral-950 flex">
