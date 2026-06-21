@@ -32,5 +32,5 @@ export const auth = betterAuth({
 			maxAge: 60 * 5,
 		},
 	},
-	trustedOrigins: [env.ORIGIN ?? ''],
+	trustedOrigins: [env.ORIGIN ?? '', 'https://colbe.cc', 'https://www.colbe.cc'],
 });
