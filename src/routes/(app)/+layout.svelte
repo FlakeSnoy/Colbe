@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { LayoutData } from './$types.js';
-
-	let { children, data }: { children: Snippet; data: LayoutData } = $props();
+	let { children }: { children: Snippet } = $props();
 </script>
 
 {@render children()}
